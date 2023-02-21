@@ -31,4 +31,6 @@ if __name__ == '__main__':
     co2_src = parse_path(arg.emissions_file)
     data = data_fun.load_data(gdp_src, pop_src, co2_src)
     data = data_fun.clean_data(data)
-    print(data)
+    data = data_fun.melt_data(data)
+    data = data_fun.merge_data(data)
+    print((data_fun.gdp_per_capita(data)))
