@@ -110,7 +110,7 @@ def data_analysis(gdp_src, pop_src, co2_src, start_year, end_year):
     data = merge_data(data)
     result_co2_change = co2_change(data)
     print('\n')
-    print('The country that has increased CO2 emissions per capita the most in the last 10 years:',
+    print('The country that has most increased CO2 emissions per capita over the last 10 years:',
           result_co2_change[0])
     print('The country that has least increased CO2 emissions per capita over the last 10 years:',
           result_co2_change[1])
