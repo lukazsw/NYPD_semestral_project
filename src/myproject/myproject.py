@@ -1,6 +1,6 @@
 import argparse
 import os
-import processing_data.functions as data_fun
+from processing_data.functions import data_analysis
 
 THIS_DIR = os.path.dirname(os.path.relpath(__file__))
 
@@ -29,8 +29,5 @@ if __name__ == '__main__':
     gdp_src = parse_path(arg.gdp_file)
     pop_src = parse_path(arg.population_file)
     co2_src = parse_path(arg.emissions_file)
-    data = data_fun.load_data(gdp_src, pop_src, co2_src)
-    data = data_fun.clean_data(data)
-    data = data_fun.melt_data(data)
-    data = data_fun.merge_data(data)
-    print((data_fun.gdp_per_capita(data)))
+
+    data_analysis(gdp_src, pop_src, co2_src, arg.start_year, arg.end_year)
